@@ -12,7 +12,7 @@ from app.rag import embed_texts, INDEX_DIR, META_PATH, FAISS_PATH, CHUNK_SIZE, C
 load_dotenv()
 
 # Limits for optimization
-MAX_TOTAL_CHUNKS   = int(os.environ.get("MAX_TOTAL_CHUNKS", "30000"))
+MAX_CHARS_PER_FILE = int(os.environ.get("MAX_CHARS_PER_FILE", "80000"))
 ALLOWED_EXTS = {".txt", ".md", ".pdf", ".html"}
 
 ROOT_DIR = Path(__file__).resolve().parent
@@ -30,7 +30,7 @@ def read_text_from_file(path: str) -> str:
 
     if ext in [".txt", ".md" ]:
         text = open(path, "r", encoding="utf-8", errors="ignore").read()
-    elif ext == ".html ":
+    elif ext == ".html":
         html = open(path, "r", encoding="utf-8", errors="ignore").read()
         soup = BeautifulSoup(html, "html.parser")
         text = soup.get_text(" ")

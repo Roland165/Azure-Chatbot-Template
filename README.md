@@ -14,8 +14,8 @@ This project demonstrates how to build your own intelligent chatbot capable of a
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/yourusername/ateme-rag-chatbot.git
-cd ateme-rag-chatbot
+git clone https://github.com/Roland165/Azure-Chatbot-Template
+cd Azure-Chatbot-Template
 ```
 
 ### 2. Create a virtual environment
@@ -29,6 +29,12 @@ Activate it:
   ```bash
   .venv\Scripts\activate
   ```
+If you get an error after this command, just also tap :
+  ```bash
+  Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+  ```
+and retry the first command.
+
 - **Mac / Linux:**
   ```bash
   source .venv/bin/activate
@@ -65,20 +71,24 @@ MAX_TOTAL_CHUNKS=2000
 ## 📁 Project Structure
 
 ```
-ateme-rag-chatbot/
+Azure-Chatbot-Template/
 │
 ├── app/
 │   ├── main.py              # FastAPI API (endpoint /ask)
 │   ├── rag.py               # RAG logic (embedding, search, answering)
 │   ├── prompts.py           # System and user prompts
-│   ├── utils.py             # Text cleaning and chunking functions
-│   ├── ingest.py            # Document ingestion and FAISS index creation
-│   ├── data/                # Folder containing your documents (.pdf, .txt, etc.)
-│   └── index/               # Automatically created folder (index + metadata)
-│
-├── streamlit_app.py         # Streamlit web interface
+│   └── utils.py             # Text cleaning and chunking functions
+│ 
+├── ui/
+│    └── streamlit_app.py    # Streamlit web interface
+│ 
+├── data/                    # Folder containing your documents (.pdf, .txt, etc.)
+│ 
+├── index/                   # Automatically created folder (index + metadata)
+│ 
+├── ingest.py                # Document ingestion and FAISS index creation
 ├── .env                     # Azure environment variables
-├── requirements.txt          # Python dependencies
+├── requirements.txt         # Python dependencies
 └── README.md
 ```
 
