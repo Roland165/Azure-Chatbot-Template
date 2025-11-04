@@ -109,7 +109,7 @@ app/data/
 This step reads your files, cleans them, generates embeddings, and creates a vector index.
 
 ```bash
-python -m app.ingest
+python ingest.py
 ```
 
 ### 3. Launch the chatbot
