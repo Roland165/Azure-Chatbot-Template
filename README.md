@@ -115,7 +115,7 @@ python -m app.ingest
 ### 3. Launch the chatbot
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run ui/streamlit_app.py
 ```
 
 → Then open the link displayed in your terminal (usually [http://localhost:8501](http://localhost:8501))

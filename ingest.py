@@ -13,6 +13,7 @@ load_dotenv()
 
 # Limits for optimization
 MAX_CHARS_PER_FILE = int(os.environ.get("MAX_CHARS_PER_FILE", "80000"))
+MAX_TOTAL_CHUNKS   = int(os.environ.get("MAX_TOTAL_CHUNKS", "30000"))
 ALLOWED_EXTS = {".txt", ".md", ".pdf", ".html"}
 
 ROOT_DIR = Path(__file__).resolve().parent
