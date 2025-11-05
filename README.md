@@ -101,7 +101,7 @@ Azure-Chatbot-Template/
 Place your `.pdf`, `.txt`, `.md`, or `.html` files in the folder:
 
 ```
-app/data/
+data/
 ```
 
 ### 2. Build the FAISS index
